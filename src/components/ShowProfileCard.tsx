@@ -1,9 +1,7 @@
 import * as React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
 import { Grid } from "@material-ui/core";
 
@@ -20,18 +18,18 @@ const useStyles = makeStyles((theme: Theme) =>
       height: theme.spacing(12),
       margin: "20px auto",
     },
-    title: {
-      fontSize: 14,
-    },
     pos: {
-      marginBottom: 12,
+      margin: 8,
+    },
+    text: {
+      marginTop: 25,
     },
     titles: {
       textAlign: "center",
     },
   })
 );
-export default function ShowProfileCard() {
+const ShowProfileCard: React.FC = () => {
   const classes = useStyles();
   return (
     <div>
@@ -42,17 +40,22 @@ export default function ShowProfileCard() {
       />
       <CardContent>
         <Grid className={classes.titles}>
-          <Typography className={classes.title} gutterBottom>
-            Filmuniversiät Babelsberg
-          </Typography>
           <Typography variant="h5" component="h2" color="primary">
             Ellina Nurmukhametova
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography
+            variant="subtitle2"
+            className={classes.pos}
+            color="textSecondary"
+            display="block"
+          >
             Creative Technologies
           </Typography>
+          <Typography variant="subtitle1" color="textPrimary">
+            Filmuniversiät Babelsberg
+          </Typography>
         </Grid>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" className={classes.text} component="p">
           A Russian girl who is passionate about art and technology, based in
           Potsdam, Germany. I have a strong knowledge of HTML, CSS, Javascript
           and fundamentals of Python and C++.
@@ -60,4 +63,5 @@ export default function ShowProfileCard() {
       </CardContent>
     </div>
   );
-}
+};
+export default ShowProfileCard;

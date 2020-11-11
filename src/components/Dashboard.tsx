@@ -16,7 +16,7 @@ import Card from "@material-ui/core/Card";
 import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { mainListItems } from "./MenuListItems";
+import { menuListItems } from "./MenuListItems";
 import EditProfileCard from "./EditProfileCard";
 import ShowProfileCard from "./ShowProfileCard";
 
@@ -120,9 +120,9 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function Dashboard() {
+const Dashboard: React.FC = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -163,7 +163,7 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List>{menuListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -189,4 +189,5 @@ export default function Dashboard() {
       </main>
     </div>
   );
-}
+};
+export default Dashboard;

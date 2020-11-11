@@ -3,7 +3,13 @@ import { Field, ErrorMessage } from "formik";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
-const useStyles = makeStyles((theme: Theme) => createStyles({}));
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    error: {
+      color: "#dc082c",
+    },
+  })
+);
 interface FormikFieldProps {
   name: string;
   label: string;
@@ -21,7 +27,6 @@ const FormikField: React.FC<FormikFieldProps> = ({
   required = false,
 }) => {
   const classes = useStyles();
-
   return (
     <Field
       autocomplete="off"
@@ -35,7 +40,9 @@ const FormikField: React.FC<FormikFieldProps> = ({
       variant={variant}
       rows={3}
       size="small"
-      helperText={<ErrorMessage name={name} />}
+      helperText={
+        <ErrorMessage name={name} component="div" className={classes.error} />
+      }
     />
   );
 };
