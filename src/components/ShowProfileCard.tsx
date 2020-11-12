@@ -57,8 +57,8 @@ const ShowProfileCard: React.FC = () => {
         </Grid>
         <Typography variant="body2" className={classes.text} component="p">
           A Russian girl who is passionate about art and technology, based in
-          Potsdam, Germany. I have a strong knowledge of HTML, CSS, Javascript
-          and fundamentals of Python and C++.
+          Potsdam, Germany. Being higly motivated to work on real world
+          problems, I'm looking for working student web developer position.
         </Typography>
       </CardContent>
     </div>
