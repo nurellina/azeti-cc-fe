@@ -47,6 +47,7 @@ const UserSchema = Yup.object().shape({
     .min(6, "Too short!")
     .max(20, "Too long!")
     .required("Required."),
+  aboutMe: Yup.string().max(200, "Maximum 200 characters."),
 });
 const EditProfileCard: React.FC = () => {
   const classes = useStyles();
